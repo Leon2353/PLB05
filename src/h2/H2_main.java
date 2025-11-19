@@ -6,17 +6,15 @@ public class H2_main {
 
 	public static void main(String[] args) {
 
-		int n = 100099;
+		int n = 3287001;
 		int digits = 0;
 		int[] a = { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-		int divider;
-		long divider_2;
+		long divider;
 		int index;
 		double z;
 
 		divider = 1;
-		divider_2 = 10;
 		digits = 0;
 		index = 8;
 
@@ -27,27 +25,27 @@ public class H2_main {
 
 		}
 
-		while ((double) n / divider_2 >= 0.1) {
+		divider = 10;
 
-			z = n % divider_2;
+		while ((double) n / divider >= 0.1) {
 
-			if ((double) n / divider_2 == 1) {
-				
+			z = n % divider;
+
+			if ((double) n / divider == 1) {
+
 				z = 1;
 				index = index - 1;
 				a[index] = (int) z;
 				break;
-				
-			}
-			else if (z != (n % (divider_2 / 10))) {
+
+			} else if (z != (n % (divider / 10))) {
 
 				while (z >= 10) {
 
 					z = (int) z / 10;
-					
+
 				}
-			} 
-			else {
+			} else {
 
 				z = 0;
 
@@ -57,7 +55,7 @@ public class H2_main {
 
 			index = index - 1;
 
-			divider_2 = divider_2 * 10;
+			divider = divider * 10;
 
 		}
 
